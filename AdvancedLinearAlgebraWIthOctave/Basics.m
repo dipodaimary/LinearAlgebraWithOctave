@@ -137,3 +137,15 @@ axis([0.5 1 -1 1])
 
 A = magic(15)
 imagesc(A), colorbar, colormap, gray;
+
+%Control statements
+for i=1:10,
+    v(i) = 2^i;
+end;
+v
+%
+i =1
+while(i<=5),
+    v(i)=100;
+    i=i+1;
+end;
