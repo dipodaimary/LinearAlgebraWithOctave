@@ -115,3 +115,25 @@ function J = CostFunctionJ(X,y,theta)
     %examples
     sqrErrors = (predictions-y).^2  %squared errors 
     J = 1/(2*m)*sum(sqrErrors)
+
+%plots
+t = [0:0.01:0.98];
+y1 = sin(2*pi*4*t);
+y2 = cos(2*pi*4*t);
+plot(t,y1);
+hold on ;
+plot(t,y2,'r');
+legend('sin','cos');
+title('myplot');
+print -dpng '/tmp/pylot.png';
+figure(1); plot(t,y1)
+figure(2); plot(t,y2)
+
+subplot(1,2,1) %divide the plot to two grids
+plot(t,y1)
+subplot(1,2,2)
+plot(t,y2)
+axis([0.5 1 -1 1])
+
+A = magic(15)
+imagesc(A), colorbar, colormap, gray;
